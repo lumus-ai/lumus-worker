@@ -22,7 +22,6 @@ class CommandGptClient(
         val message = apiService.complete(requestBody).execute().body()!!.choices.first().message
         var content = message.content
         if (message.content.startsWith("{")) { content = "[${message.content.withFixes()}]" }
-        println(message.content)
         val commandsJson = Json.parseToJsonElement(content).jsonArray
         return commandsJson.map { Json.decodeFromJsonElement(it) }
     }
