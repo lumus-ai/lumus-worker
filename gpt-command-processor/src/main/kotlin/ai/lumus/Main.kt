@@ -4,6 +4,7 @@ import ai.lumus.processor.createOperation
 import ai.lumus.settings.Settings
 import ai.lumus.settings.SettingsManager
 import ai.lumus.worker.command.OperationCommand
+import ai.lumus.worker.command.OperationCommandFormatter.AnsiColor.RED
 import ai.lumus.worker.openai.CommandGptClient
 import ai.lumus.worker.openai.request.ChatModel
 import com.github.ajalt.clikt.core.CliktCommand
@@ -39,7 +40,7 @@ class Lumus : CliktCommand(
 
     override fun run() {
         val apiKey = System.getenv("OPENAI_API_KEY")
-        if (apiKey == null) { print("Error: lease define OPENAI_API_KEY environment variable."); exitProcess(0) }
+        if (apiKey == null) { print("${RED}Error: please define OPENAI_API_KEY environment variable"); exitProcess(0) }
 
         val settings = loadSettings()
         val gptClient = CommandGptClient(apiKey, settings.gptModel)
