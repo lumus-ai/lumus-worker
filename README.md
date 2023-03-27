@@ -7,8 +7,8 @@ Follow these steps to install the Lumus CLI tool:
 ```bash
 tar -xzf lumus-1.0.0.tar.gz
 ```
-3. Move the lumus script to /usr/local/bin:
+3. Change directory to the newborn lumus-1.0.0 folder and call ./lumus script
 ```bash
-sudo mv /path/to/your/extracted/lumus/script/lumus /usr/local/bin
+cd /path/to/your/extracted/lumus/ && ./lumus --help
 ```
-Replace /path/to/your/extracted/lumus/script with the actual path to the lumus script inside the extracted tarball.
+
