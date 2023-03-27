@@ -1,2 +1,2 @@
 #!/bin/sh
-java -jar build/libs/lumus.jar "$@"
+java -jar build/libs/shadow.jar "$@"
